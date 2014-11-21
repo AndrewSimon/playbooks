@@ -1,0 +1,12 @@
+ec2_access_key: |--WHITHELD--|
+ec2_secret_key: |--WHITHELD--| 
+keypair: AWS
+instance_type: t1.micro
+region: us-east-1
+zone: us-east-1b
+spot_price: 0.01
+spot_wait_timeout: 300
+wait: yes
+assign_public_ip: yes
+image:  ami-bc8131d4
+group: default

@@ -1,0 +1,31 @@
+---
+# This playbook deploys the whole application stack in this site.  
+
+- name: Create spot instances
+  hosts: ec2
+  remote_user: root
+
+  roles:
+    - ec2
+
+- name: apply common configuration to all nodes
+#  hosts: webservers dbservers
+  hosts: webservers 
+  remote_user: root
+
+  roles:
+    - common
+
+- name: configure and deploy the webservers and application code
+  hosts: webservers
+  remote_user: root
+
+  roles:
+    - web
+
+#- name: deploy MySQL and configure the databases
+#  hosts: dbservers
+#  remote_user: root
+#
+#  roles:
+#    - db
